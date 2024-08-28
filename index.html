@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Roman Numeral List</title>
+    <style>
+        .roman-numerals {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:1%;
+            align-items: center;
+            list-style-type: decimal-leading-zero;
+            counter-reset: roman-counter; /* Reset the counter */
+            
+        }
+
+        .roman-numerals > li {
+            text-align: center;
+            color:cadetblue;
+            counter-increment: roman-counter; /* Increment the counter for each item */
+            position: relative;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            width: 40px; /* Size of dots */
+            height: 20px; /* Size of dots */
+            margin: 2%;
+            /* Space for the custom Roman numeral */
+            
+        }
+        .roman-numerals > li::before {
+            left: 0;
+        }
+
+        #main{
+            color: cadetblue;
+        }
+
+        button{
+            background-color: cadetblue;
+            width: fit-content;
+            text-align: center;
+            padding: 0.5%;
+            border: none;
+            font-size: 1rem;
+            color: wheat;
+        }
+        button > img{
+            width: 100%;
+        }
+            
+    .video-container {
+        position: relative; /* Required for absolute positioning of the iframe */
+        width: 90%; /* Set the desired width */
+        padding-top: 62.5%; /* 4:3 Aspect Ratio (3 / 4 = 0.75 or 75%) */
+        margin: 15% auto; /* Center the container horizontally */
+        overflow: hidden; /* Hide anything outside the container */
+    }
+
+    /* Style for the iframe */
+    .video-container iframe {
+        position: absolute; /* Position the iframe absolutely within the container */
+        top: 0%;
+        left: 0%;
+        width: 100%; /* Make iframe fill the container */
+        height: 100%; /* Make iframe fill the container */
+        overflow: hidden;
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .video-container {
+            padding-top: 62.5%; /* 4:3 Aspect Ratio */
+        }
+    }
+
+    </style>
+    
+</head>
+<body>
+    <button onclick="handleContent('0')">Home</button>
+    <ol class="roman-numerals">
+        <li onclick="handleContent(this.id)"  id="1"></li>
+        <li onclick="handleContent(this.id)" id="2"></li>
+        <li onclick="handleContent(this.id)" id="3"></li>
+        <li onclick="handleContent(this.id)" id="4"></li>
+        <li onclick="handleContent(this.id)" id="5"></li>
+        <li onclick="handleContent(this.id)" id="6"></li>
+        <li onclick="handleContent(this.id)" id="7"></li>
+        <li onclick="handleContent(this.id)" id="8"></li>
+        <li onclick="handleContent(this.id)" id="9"></li>
+        <li onclick="handleContent(this.id)" id="10"></li>
+        <li onclick="handleContent(this.id)" id="11"></li>
+        <li onclick="handleContent(this.id)" id="12"></li>
+        <li onclick="handleContent(this.id)" id="13"></li>
+        <li onclick="handleContent(this.id)" id="14"></li>
+        <li onclick="handleContent(this.id)" id="15"></li>
+        <li onclick="handleContent(this.id)" id="16"></li>
+        <li onclick="handleContent(this.id)" id="17"></li>
+        <li onclick="handleContent(this.id)" id="18"></li>
+        <li onclick="handleContent(this.id)" id="19"></li>
+        <li onclick="handleContent(this.id)" id="20"></li>
+        <li onclick="handleContent(this.id)" id="21"></li>
+        <li onclick="handleContent(this.id)" id="22"></li>
+
+    </ol>
+    <div class="video-container" >
+        
+        <iframe id="myVideo" src="https://placehold.co/128x72/50B498/DEF9C4?text=Home" frameborder="0" allowfullscreen></iframe>
+    </div>
+</body>
+<script>
+    const content = document.getElementById('myVideo');
+    const arrSrc = ["https://placehold.co/128x72/50B498/DEF9C4?text=Home",
+    "k67GBsH6KHMt0sBlZam" , 'k4vik4QaAhibmHBlZio' , 'k38EjQ3yvi40m6BlZim' , 'k2nISFY0nl4OY6BlZik','kZyrYnOwlYFoiNBlZig',
+    'k6SMmcKlfLs5H6BlZii','k1zMQmiZCHqCMBBlZEi','k7q3j3t4Vvbs0WBlZEg','ko9txT3mPXqW44BlZEa','k5roxIbt2Tn5YRBlZEc',
+    '11','12','13','14','15',
+    '16','17','18','19','20','1003029247','1003032131'];
+
+    function handleContent(num){
+        var thisId = Number(num);
+        if(thisId===0){
+            content.src = arrSrc[0];
+        }
+        else if(thisId>20){
+            content.src = `https://player.vimeo.com/video/${arrSrc[thisId]}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`;
+        }else if(thisId>10){
+            console.log(thisId);
+
+        }else{
+            content.src = `https://www.dailymotion.com/embed/video/${arrSrc[thisId]}?autoplay=1`;
+        }
+    }
+</script>
+
+</html>
