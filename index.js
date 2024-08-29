@@ -15,3 +15,10 @@ function handleContent(thisId){
         content.src = `https://www.dailymotion.com/embed/video/${arrSrc[thisId]}?autoplay=1`;
     }
 }
+var liS = document.querySelectorAll("li");
+        liS.forEach((element,idx)=>{
+            element.addEventListener('click',function(e){
+                e.preventDefault();
+                handleContent(idx+1);
+            })
+        })
