@@ -1,3 +1,17 @@
+$(document).ready(function() {
+    // Handle click event on buttons with data-bs-toggle="collapse"
+    $('button[data-bs-toggle="collapse"]').on('click', function() {
+        // Get the target div ID from the button's data-bs-target attribute
+        const targetSelector = $(this).attr('data-bs-target');
+        
+        // Hide all divs with class 'collapse' that do not match the target
+        $('div.collapse').not(targetSelector).hide();
+        
+        // Toggle the visibility of the target div (if needed)
+        $(targetSelector).toggle();
+    });
+});
+
 const arrSrc = ["k67GBsH6KHMt0sBlZam" , 'k4vik4QaAhibmHBlZio' , 'k38EjQ3yvi40m6BlZim' , 'k2nISFY0nl4OY6BlZik','kZyrYnOwlYFoiNBlZig',
     'k6SMmcKlfLs5H6BlZii','k1zMQmiZCHqCMBBlZEi','k7q3j3t4Vvbs0WBlZEg','ko9txT3mPXqW44BlZEa','k5roxIbt2Tn5YRBlZEc',
     'k5jZQHHPOavmazBn4yG','kFznqQYbMplvFYBn4yy','kUkWgOFiaBqrm6Bn4tq','k5QsQYegtqJmBtBn4yC','k5B21GO2rEIMyGBn4yA',
