@@ -4,111 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🇹🇭 หมอหลวง</title>
-    <style>
-        .roman-numerals {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap:1%;
-            align-items: center;
-            list-style-type: decimal-leading-zero;
-            counter-reset: roman-counter; /* Reset the counter */
-            
-        }
-
-        .roman-numerals > li {
-            text-align: center;
-            color:cadetblue;
-            counter-increment: roman-counter; /* Increment the counter for each item */
-            position: relative;
-            font-size: 1.2rem;
-            font-weight: bolder;
-            width: 40px; /* Size of dots */
-            height: 20px; /* Size of dots */
-            margin: 2%;
-            /* Space for the custom Roman numeral */
-            
-        }
-        .roman-numerals > li::before {
-            left: 0;
-        }
-
-        #main{
-            color: cadetblue;
-        }
-
-        button{
-            background-color: cadetblue;
-            width: fit-content;
-            text-align: center;
-            padding: 0.5%;
-            border: none;
-            font-size: 1rem;
-            color: wheat;
-        }
-        button > img{
-            width: 100%;
-        }
-            
-    .video-container {
-        position: relative; /* Required for absolute positioning of the iframe */
-        width: 90%; /* Set the desired width */
-        padding-top: 62.5%; /* 4:3 Aspect Ratio (3 / 4 = 0.75 or 75%) */
-        margin: 15% auto; /* Center the container horizontally */
-        overflow: hidden; /* Hide anything outside the container */
-    }
-
-    /* Style for the iframe */
-    .video-container iframe {
-        position: absolute; /* Position the iframe absolutely within the container */
-        top: 0%;
-        left: 0%;
-        width: 100%; /* Make iframe fill the container */
-        height: 100%; /* Make iframe fill the container */
-        overflow: hidden;
-        display: block;
-    }
-
-    @media (max-width: 768px) {
-        .video-container {
-            padding-top: 62.5%; /* 4:3 Aspect Ratio */
-        }
-    }
-
-    </style>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./scrollable.css">
 </head>
 <body>
-    <button onclick="handleContent(0)">Home</button>
-    <ol class="roman-numerals">
-        <li id="1"></li>
-        <li id="2"></li>
-        <li id="3"></li>
-        <li id="4"></li>
-        <li id="5"></li>
-        <li id="6"></li>
-        <li id="7"></li>
-        <li id="8"></li>
-        <li id="9"></li>
-        <li id="10"></li>
-        <li id="11"></li>
-        <li id="12"></li>
-        <li id="13"></li>
-        <li id="14"></li>
-        <li id="15"></li>
-        <li id="16"></li>
-        <li id="17"></li>
-        <li id="18"></li>
-        <li id="19"></li>
-        <li id="20"></li>
-        <li id="21"></li>
-        <li id="22"></li>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Left side content -->
+                <div class="video-container">
+                    <iframe id="myVideo" src="about:blank" frameborder="0" allowfullscreen></iframe>
 
-    </ol>
-    <div class="video-container" >
-        
-        <iframe id="myVideo" src="https://placehold.co/128x72/50B498/DEF9C4?text=Home" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <!-- Right side fixed-size and scrollable -->
+                <button class="btn" data-bs-toggle="collapse" data-bs-target="#p1">1-8</button>
+                <button class="btn" data-bs-toggle="collapse" data-bs-target="#p2">9-16</button>
+                <button class="btn" data-bs-toggle="collapse" data-bs-target="#p3">17-22</button>
+                <div class="scrollable-div collapse" id="p1">
+                    <div class="text-box">หมอหลวง ตอนที่ 1 วันที่ 21 มีนาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 2 วันที่ 27 มีนาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 3 วันที่ 28 มีนาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 4 วันที่ 3 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 5 วันที่ 4 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 6 วันที่ 10 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 7 วันที่ 11 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 8 วันที่ 17 เมษายน 2566</div>
+                    
+                    <!-- Add more text boxes as needed -->
+                </div>
+                <div class="scrollable-div collapse" id="p2">
+                    <div class="text-box">หมอหลวง ตอนที่ 9 วันที่ 18 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 10 วันที่ 24 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 11 วันที่ 25 เมษายน 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 12 วันที่ 1 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 13 วันที่ 2 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 14 วันที่ 8 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 15 วันที่ 9 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 16 วันที่ 15 พฤษภาคม 2566</div>
+                    
+                </div>
+                <div class="scrollable-div collapse" id="p3">
+                    <div class="text-box">หมอหลวง ตอนที่ 17 วันที่ 16 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 18 วันที่ 22 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 19 วันที่ 23 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 20 วันที่ 29 พฤษภาคม 2566</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 21 วันที่ 30 พฤษภาคม 2566 SD</div>
+                    <div class="text-box">หมอหลวง ตอนที่ 22 วันที่ 5 มิถุนายน 2566</div>
+                </div>
+            </div>
+        </div>
     </div>
+    
 
     <script src="./index.js"></script>
 </body>
